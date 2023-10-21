@@ -1,21 +1,22 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    const Sale = sequelize.define("Sale", {
+    const SaleDetail = sequelize.define("SaleDetail", {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
-        payMethod: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        amount:{
+            type: DataTypes.NUMBER,
         },
-        date:{
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.NOW, 
+        unitPrice:{
+            type: DataTypes.NUMBER
+        },
+        finalPrice:{
+            type: DataTypes.NUMBER
         }
     }, { timestamps: false });
 
-    return Sale;
+    return SaleDetail;
 }
