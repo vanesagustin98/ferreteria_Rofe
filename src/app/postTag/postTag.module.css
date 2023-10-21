@@ -1,0 +1,161 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 430px;
+  margin: 65px auto;
+  padding: 40px;
+  background-color: #474747;
+  border-radius: 13px;
+  color: #ec8800;
+  border: 2px solid #555;
+  font-size: 24px;
+  font-weight: 400;
+}
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.label select {
+  border-radius: 4px;
+  color: black;
+  width: 140px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 12px;
+}
+.label select:hover {
+  background-color: #eaeaea;
+}
+
+.b {
+  color: black;
+  border-radius: 5px;
+  width: 110px;
+  height: 40px;
+  border: #555;
+  cursor: pointer;
+  background: #ec8800;
+}
+[data-theme="dark"] .b {
+  border: #555;
+  color: white;
+}
+
+.b:hover {
+  color: black;
+  background: #d27200;
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.formgroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.error {
+  color: rgba(255, 0, 0, 0.915);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.divisor{
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rubroGrupo{
+  display: flex;
+  gap: 25px;
+  margin-top: 60px;
+}
+
+.table{
+  /* background: red; */
+  border-radius: 5px;
+  
+}
+
+.borde{
+  border: transparent;
+}
+
+.body{
+  width: 20px; /* Establece el ancho del botón */
+  height: 20px; /* Establece la altura del botón */
+  border-radius: 50%; /* Hace que el botón sea circular */
+  border: 2px solid #ccc; /* Añade un borde al botón */
+  background-color: #fff; /* Establece el color de fondo del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: red;
+}
+
+.table{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.table thead{
+  background: #474747;
+  color: #ec8800;
+  border: transparent;
+  font-size: 30px;
+  
+}
+
+.tabla tr{
+  text-align: center;
+
+}
+
+/* .table tbody{
+  border: 1px solid red;
+  display: inline;
+  
+  justify-content: space-between;
+} */
+
+.table th{
+  padding: 6px;
+  border-radius: 5px;
+
+}
+
+/*.form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  width: 110px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background: #ec8800;
+  margin-top: 10px;
+}
+.form button:hover {
+  color: #555;
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+} */

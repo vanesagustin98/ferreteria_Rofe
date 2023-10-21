@@ -1,0 +1,32 @@
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+  }
+  
+  .navbar-brand {
+    margin-left: 20px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info img {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+  }
+  
+  .user-info b {
+    font-weight: bold;
+  }
+  
+  .logout-button {
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  .login-link {
+    margin-right: 15px;
+  }

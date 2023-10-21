@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #ffa424;
+  color: black;
+}
+[data-theme="dark"] .container {
+  background: #1e1e1e;
+  color: white;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.option select,
+.option2 select {
+  background-color: #555;
+  font-size: 12px;
+  color: white;
+  border: 2px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px 13px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+}
+
+.option select:hover {
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+.option2 select:hover {
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.rutas a,
+.rutas a:visited,
+.rutas a:active {
+  background-color: #555;
+  font-size: 12px;
+  color: white;
+  border: 2px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px 13px;
+  text-decoration: none;
+  width: 150px;
+  height: 30px;
+}
+.rutas a:hover {
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.rutas,
+.option {
+  padding: 5px 30px 5px 30px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.option2 {
+  padding: 5px 30px 5px 30px;
+  border-right: 1px solid rgb(0, 0, 0);
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.logo {
+  position: relative;
+  background-image: url("../assets/images/rofe-logo4.jpg");
+  background-size: cover;
+  width: 200px;
+  height: 100px;
+  background-position: left;
+  border-radius: 20px;
+}
+[data-theme="dark"] .logo {
+  filter: grayscale(90%);
+}
+[data-theme="dark"] .logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.sesion {
+  padding: 5px;
+  position: relative;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sesion div {
+  border-radius: 5px;
+  margin-bottom: 18px;
+  padding: 6px;
+}
+
+.dash a {
+  background-color: #555;
+  color: white;
+  border: 2px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  font-size: medium;
+  padding: 2px;
+  display: inline-block;
+  text-decoration: none;
+  width: 110px;
+}
+
+.dash a:hover {
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.login a {
+  background-color: #555;
+  color: white;
+  border: 2px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  font-size: medium;
+  padding: 2px;
+  text-decoration: none;
+  width: 110px;
+}
+
+.login a:hover {
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+
+/*---------------RESPONSIVE-------------------------------*/
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .option select,
+  .option2 select,
+  .rutas a {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    width: 150px;
+    height: 75px;
+  }
+}

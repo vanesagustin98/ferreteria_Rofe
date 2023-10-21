@@ -1,0 +1,195 @@
+.main {
+  margin: 30px 50px 0 50px;
+  padding: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 52px;
+  border: 1px solid #6f6e6e;
+  background: rgba(255, 255, 255, 0);
+}
+[data-theme="dark"] .main {
+  background: #1e1e1e;
+  color: white;
+}
+
+.section {
+  display: flex;
+  gap: 200px;
+}
+[data-theme="dark"] .section {
+  background: #1e1e1e;
+  color: white;
+}
+
+.seguido {
+  display: flex;
+  margin: 10px 0;
+  padding: 5px;
+  align-items: center;
+}
+[data-theme="dark"] .seguido {
+  background: #1e1e1e;
+  color: rgb(197, 145, 110);
+}
+
+.seguido h2 {
+  margin-right: 10px;
+  color: #000;
+  font-size: 30px;
+}
+[data-theme="dark"] .seguido h2 {
+  background: #1e1e1e;
+  color: white;
+}
+
+.seguido p {
+  font-size: 25px;
+}
+[data-theme="dark"] .seguido p {
+  background: #1e1e1e;
+  color: rgb(241, 240, 233);
+}
+
+.divDescription {
+  flex: 1;
+  margin-left: 15px;
+  width: 700px;
+  height: 600px;
+  flex-shrink: 1;
+}
+[data-theme="dark"] .divDescription {
+  background: #1e1e1e;
+  color: white;
+}
+
+.divDescription h1 {
+  color: #1e1e1e;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 480;
+  line-height: normal;
+}
+[data-theme="dark"] .divDescription h1 {
+  background: #1e1e1e;
+  color: rgb(197, 145, 110);
+}
+
+.divDescription h2 {
+  font-size: 30px;
+}
+[data-theme="dark"] .divDescription h2 {
+  background: #1e1e1e;
+  color: white;
+}
+
+.description {
+  margin: 15px 0;
+  padding: 10px;
+}
+[data-theme="dark"] .description {
+  background: #1e1e1e;
+  color: rgb(241, 240, 233);
+}
+
+.description p {
+  color: #1e1e1e;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+[data-theme="dark"] .description p {
+  background: #1e1e1e;
+  color: #989393;
+}
+
+.divImg {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+[data-theme="dark"] .divImg {
+  background: #1e1e1e;
+  color: rgb(167, 168, 154);
+}
+
+.divImg img {
+  max-width: 120%;
+  border-radius: 20px;
+}
+[data-theme="dark"] .divImg img {
+  background: #1e1e1e;
+  color: rgb(167, 168, 154);
+  border-radius: 20px;
+  filter: grayscale(30%);
+}
+
+.button {
+  color: white;
+  border: 2px solid #555;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  background-color: #555;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  position: absolute;
+  bottom: 120px;
+  right: 90px;
+  width: 150px;
+  height: 40px;
+}
+
+.buttonModificar {
+  color: white;
+  border: 2px solid #555;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  background-color: #555;
+  cursor: pointer;
+}
+
+.button:hover, .buttonModificar:hover {
+  border-color: #6f6e6e;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.buttonAgg {
+  color: white;
+  border: 2px solid #555;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  background-color: #555;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  position: absolute;
+  top: 700px;
+  right: 90px;
+  width: 150px;
+  height: 40px;
+}
+
+.buttonAgg:hover {
+  border-color: #6f6e6e;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.buttonAgg:focus,
+.buttonAgg:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.butt {
+  border: 1px solid red;
+  position: relative; /* Establece el contenedor como una referencia para el posicionamiento absoluto del botón */
+  width: 300px; /* Ancho del contenedor, ajusta según tus necesidades */
+  height: 200px;
+}

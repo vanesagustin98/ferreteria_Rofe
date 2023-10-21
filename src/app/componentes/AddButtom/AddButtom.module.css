@@ -1,0 +1,20 @@
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-color: #ff9800;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50%;
+  right: 4%;
+  font-size: 110px;
+  padding-bottom: 12px;
+  padding-right: 2px;
+}
+[data-theme="dark"] .add {
+  background: orange;
+  color: rgb(38, 37, 36);
+}

@@ -1,0 +1,19 @@
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-color: #ff9800;
+    background-position: center;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 37%;
+    left: 3%;
+    font-size: 60px;
+    cursor: pointer;  
+  }
+  

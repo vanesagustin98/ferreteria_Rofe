@@ -1,0 +1,22 @@
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background-image: url(../assets/images/carrito\ negro.png);
+  background-color: #ff9800;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 60%;
+  right: 4%;
+  font-size: 110px;
+  padding-bottom: 12px;
+  padding-right: 2px;
+
+  /* filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(269deg) brightness(106%) contrast(101%); */
+}

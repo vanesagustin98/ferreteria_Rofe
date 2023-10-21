@@ -1,0 +1,55 @@
+.all {
+  display: flex;
+  justify-content: center;
+}
+[data-theme="dark"] .all {
+  background: #1e1e1e;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-color: #474747;
+  padding: 15px;
+  color: white;
+  margin: 16px;
+}
+[data-theme="dark"] .container {
+  background: #2c251b;
+  color: orange;
+}
+
+.a {
+  width: 12%;
+}
+
+.b {
+  width: 28%;
+}
+
+.c {
+  width: 15%;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+
+.d {
+  width: 15%;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+
+.e {
+  width: 15%;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+
+.f {
+  width: 15%;
+  margin: 0 auto;
+  margin-right: 10px;
+}

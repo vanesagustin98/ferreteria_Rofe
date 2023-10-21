@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Estilos modo oscuro */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Estilos específicos para elementos  */
+.dark-mode h1 {
+  color: #5b3907; /* Color de título en modo oscuro */
+}
+
+/*  color: #ff9800*/

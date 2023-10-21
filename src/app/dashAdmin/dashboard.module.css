@@ -1,0 +1,166 @@
+.containerGrid {
+  display: grid;
+  grid-template-columns: 35% auto;
+  color: black;
+}
+[data-theme="dark"] .containerGrid {
+  background: #1e1e1e;
+  color: white;
+}
+.image {
+  width: 25vh;
+  height: 25vh;
+  border-radius: 50%;
+  border: solid 1px #555;
+}
+[data-theme="dark"] .image {
+  border: solid 1px #555;
+}
+
+.caja1 {
+  grid-row: 1 / span 2;
+  height: 83vh;
+  padding: 6vh;
+}
+[data-theme="dark"] .caja1 {
+  background: #1e1e1e;
+  color: white;
+}
+
+.ul {
+  list-style: none;
+}
+
+.li {
+  margin: 5px;
+  font-size: 25px;
+}
+
+.caja2 {
+  grid-row: 1 / span 2;
+}
+
+.infoAdmin {
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
+[data-theme="dark"] .infoAdmin {
+  background: #201f1f;
+  color: white;
+}
+
+.cajaButtons1 {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 20px;
+  align-items: center;
+}
+
+.buttonsCaja1 {
+  text-decoration: none;
+  display: flex;
+  padding: 5px;
+  color: white;
+  background-color: #555;
+  border-radius: 10px;
+  margin: 10px;
+  width: 180px;
+  height: 35px;
+  justify-content: center;
+  border: solid 1px orange;
+}
+.buttonsCaja1:hover {
+  box-shadow: 0 0 15px rgb(92, 106, 125);
+}
+
+.cajaButtons2 {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.buttonsCaja2 {
+  display: flex;
+  padding: 4px;
+  background-color: #ffa424;
+  border-radius: 10px;
+  margin: 5px;
+  width: 150px;
+  height: 35px;
+  justify-content: center;
+}
+
+.cajaGraficos {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+[data-theme="dark"] .cajaGraficos {
+  background: #201f1f;
+  color: white;
+}
+
+.grafico {
+  border: solid 1px #ffa424;
+  width: 50vh;
+  height: 32vh;
+  margin: 12px;
+  border-radius: 10px;
+}
+
+.graficoGrande{
+  border: solid 1px #ffa424;
+  width: 50vh;
+  height: 32vh;
+  margin: 12px;
+  border-radius: 10px;
+  grid-column: 1/3;
+}
+[data-theme="dark"] .grafico {
+  background: #555;
+  color: white;
+}
+
+/*-------------RESPONSIVE----------------------*/
+
+
+@media (max-width: 768px) {
+  .containerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caja1 {
+    height: auto;
+    padding: 4vh;
+  }
+
+  .cajaButtons1 {
+    padding: 10px;
+  }
+
+  .grafico {
+    width: 90%;
+    height: 25vh;
+    margin: 6px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .containerGrid {
+    grid-template-columns: 30% auto;
+  }
+
+  .grafico {
+    width: 40vh;
+    height: 28vh;
+    margin: 10px;
+  }
+}
