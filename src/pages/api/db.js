@@ -5,7 +5,8 @@ const ProductsModel = require("../../models/Products");
 const SuppliersModel = require("../../models/Suppliers");
 const TagModel = require("../../models/Tag");
 const ReviewModel = require("../../models/Review");
-
+const SaleModel = require("../../models/Sale")
+const SaleDetailModel = require("../../models/SaleDetail")
 //IMPORTANTE!!!!!
 // const { faTruckMedical } = require('@fortawesome/free-solid-svg-icons');
 
@@ -32,11 +33,11 @@ db.sequelize = sequelize;
 
 db.Users = UsersModel(sequelize);
 db.Products = ProductsModel(sequelize);
- 
 db.Suppliers = SuppliersModel(sequelize);
 db.Tag = TagModel(sequelize);
 db.Review = ReviewModel(sequelize);
- 
+ db.Sale = SaleModel(sequelize)
+ db.SaleDetail = SaleDetailModel(sequelize)
 
 const {
   Users,

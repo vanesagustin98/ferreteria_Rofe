@@ -14,8 +14,13 @@ module.exports = (sequelize) => {
         date:{
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW, 
-        }
-    }, { timestamps: false });
+        }  ,  precioTotal: {
+            type: DataTypes.FLOAT,  
+          },
+     
+    }, { timestamps: true,
+        timezone: '-03:00'
+    });
 
     return Sale;
 }
