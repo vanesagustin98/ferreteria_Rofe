@@ -7,30 +7,33 @@ module.exports = (sequelize) => {
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
-        amount:{
+        amount: {
             type: DataTypes.INTEGER,
         },
-        unitPrice:{
+        unitPrice: {
             type: DataTypes.INTEGER
         },
-        finalPrice:{
+        finalPrice: {
             type: DataTypes.INTEGER
-        },VentaId: {
+        }, VentaId: {
             type: DataTypes.UUID,
             allowNull: false,
             references: {
-                model: 'Sales', // Nombre de la tabla de ventas
-                key: 'id', // Campo de la tabla de ventas al que se relaciona
+                model: 'Sales', 
+                key: 'id', 
             },
         },
         ProductoId: {
-            type: DataTypes.UUID, // Tipo de datos adecuado para el ID de producto
+            type: DataTypes.UUID, 
             allowNull: false,
             references: {
-                model: 'Products', // Nombre de la tabla de productos
-                key: 'id', // Campo de la tabla de productos al que se relaciona
+                model: 'Products', 
+                key: 'id', 
             },
         },
+        Product:{
+            type: DataTypes.STRING,
+        }
     }, { timestamps: false });
 
     return SaleDetail;
