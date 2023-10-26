@@ -5,7 +5,7 @@ const ProductsModel = require("../../models/Products");
 const SuppliersModel = require("../../models/Suppliers");
 const TagModel = require("../../models/Tag");
 const ReviewModel = require("../../models/Review");
-const SaleModel = require("../../models/Sale")
+const SaleModel = require("../../models/sale")
 const SaleDetailModel = require("../../models/SaleDetail")
 //IMPORTANTE!!!!!
 // const { faTruckMedical } = require('@fortawesome/free-solid-svg-icons');
