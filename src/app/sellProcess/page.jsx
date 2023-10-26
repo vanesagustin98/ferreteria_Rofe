@@ -13,7 +13,6 @@ import { getAllProducts } from "../redux/actions/actions";
 const CartForm = () => {
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.products);
-  console.log(allProducts);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 30;
 

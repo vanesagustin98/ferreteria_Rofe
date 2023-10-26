@@ -10,19 +10,9 @@ import { getProductById, cartAddItem } from "../redux/actions/actions";
 const Detail = ({ params }) => {
   const id = params.id;
   const dispatch = useDispatch();
-  const allProducts = useSelector((state) => state.products);
-  const cartItems = useSelector((state) => state.allCartItems);
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 30;
-
-  const indexOfLastProducts = currentPage * productsPerPage;
-  const indexOfFirstProducts = indexOfLastProducts - productsPerPage;
-  const currentProducts = allProducts.slice(
-    indexOfFirstProducts,
-    indexOfLastProducts
-  );
-
   const productDetail = useSelector((state) => state.productDetail);
+  const cartItems = useSelector((state) => state.allCartItems);
+
   useEffect(() => {
     dispatch(getProductById(id));
   }, [dispatch, id]);

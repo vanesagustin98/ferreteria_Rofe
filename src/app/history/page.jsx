@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../componentes/NavBar/NavBar";
 import { getAllSales } from "../redux/actions/actions";
-
+import Link from "next/link";
 import style from "./page.module.css";
 
 function History() {
@@ -37,6 +37,7 @@ function History() {
           </div>
         </div>
         {sales.map((sale) => (
+          <Link href={`historyDetail/${sale.id}`}>
           <div key={sale.id} className={style.all}>
             <div className={style.container}>
               <div className={style.b}>{sale.id}</div>
@@ -45,6 +46,7 @@ function History() {
               <div className={style.b}>{sale.payMethod}</div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
