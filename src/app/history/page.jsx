@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../componentes/NavBar/NavBar";
 import { getAllSales } from "../redux/actions/actions";
-import StarRating from "../componentes/Rating/Rating";
+
 import style from "./page.module.css";
 
 function History() {
@@ -40,9 +40,9 @@ function History() {
           <div key={sale.id} className={style.all}>
             <div className={style.container}>
               <div className={style.b}>{sale.id}</div>
-              <div className={style.b}>{sale.saleDate}</div>
-              <div className={style.b}> {sale.totalAmount}</div>
-              <div className={style.b}>{sale.method}</div>
+              <div className={style.b}>{sale.date}</div>
+              <div className={style.b}> {sale.precioTotal}</div>
+              <div className={style.b}>{sale.payMethod}</div>
             </div>
           </div>
         ))}

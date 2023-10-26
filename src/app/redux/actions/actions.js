@@ -24,10 +24,25 @@ import {
   DELETE_LOGIC_TAG,
   DELETE_LOGIC_RUBRO,
   UPDATE_PRODUCT,
-
+  SALE_DETAIL,
   PUT_USERS
 } from "./actionsTypes";
 import axios from "axios";
+
+
+export const getDetailSale = (id) => async (dispatch) => {
+  try {
+    const response = await axios.get(`/api/sale?id=${id}`);
+    console.log(response);
+    const salesData = response.data;
+    dispatch({
+      type: "SALE_DETAIL",
+      payload: salesData,
+    });
+  } catch (error) {
+    console.error("Error al obtener las ventas:", error);
+  }
+};
 
 export const getSuppliers = () => {
   return async (dispatch) => {
@@ -327,7 +342,7 @@ export const deleteLogicProduct = (id) => {
 };
 export const getAllSales = () => async (dispatch) => {
   try {
-    const response = await axios.get("/api/sales");
+    const response = await axios.get("/api/sale");
     console.log(response);
     const salesData = response.data;
     dispatch({

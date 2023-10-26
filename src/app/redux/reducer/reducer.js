@@ -15,7 +15,7 @@ import {
   GET_USER_BY_EMAIL,
   POST_USERS,
   POST_TAG,
-
+  SALE_DETAIL,
   GET_RUBRO,
   GET_ALL_CART_ITEM_PRODUCTS,
   CART_ADD_ITEM,
@@ -309,6 +309,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         sales: action.payload,
       };
+      case SALE_DETAIL:
+        return {
+          ...state,
+          detailSale:action.payload
+        }
     case DELETE_LOGIC_RUBRO:
       return {
         ...state,
