@@ -24,9 +24,7 @@ import {
   DELETE_LOGIC_TAG,
   DELETE_LOGIC_RUBRO,
   UPDATE_PRODUCT,
-  POST_REVIEW,
-  GET_REVIEW,
-  GET_REVIEW_BY_ID,
+
   PUT_USERS
 } from "./actionsTypes";
 import axios from "axios";
@@ -397,45 +395,4 @@ export const deleteLogicSupplier = (id_suppliers) => {
     }
   };
 };
-export const postReview = (review) => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios.post("api/Review", review);
-      return dispatch({
-        type: POST_REVIEW,
-        payload: data,
-      });
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-};
 
-export const getReviewById = (idReview) => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios.get(`
-            /api/Review?idReview=${idReview}`);
-      return dispatch({
-        type: GET_REVIEW_BY_ID,
-        payload: data,
-      });
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-};
-
-export const getReviews = () => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios.get("/api/Review");
-      return dispatch({
-        type: GET_REVIEW,
-        payload: data,
-      });
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-};

@@ -4,7 +4,6 @@ const UsersModel = require("../../models/users");
 const ProductsModel = require("../../models/Products");
 const SuppliersModel = require("../../models/Suppliers");
 const TagModel = require("../../models/Tag");
-const ReviewModel = require("../../models/Review");
 const SaleModel = require("../../models/sale")
 const SaleDetailModel = require("../../models/SaleDetail")
 //IMPORTANTE!!!!!
@@ -35,7 +34,6 @@ db.Users = UsersModel(sequelize);
 db.Products = ProductsModel(sequelize);
 db.Suppliers = SuppliersModel(sequelize);
 db.Tag = TagModel(sequelize);
-db.Review = ReviewModel(sequelize);
  db.Sale = SaleModel(sequelize)
  db.SaleDetail = SaleDetailModel(sequelize)
 
@@ -44,7 +42,7 @@ const {
   Products,
   Suppliers,
   Tag,
-  Review,
+
   SaleDetail,
   Sale
 } = db.sequelize.models;
@@ -70,8 +68,7 @@ Tag.belongsToMany(Products, {
   foreignKey: "tagId",
 });
  
-Review.belongsTo(Users, { foreignKey: "idUser" });
-Users.hasOne(Review, { foreignKey: "idUser" });
+
 
  
 db.sequelize.sync();

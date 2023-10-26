@@ -15,9 +15,7 @@ import {
   GET_USER_BY_EMAIL,
   POST_USERS,
   POST_TAG,
-  POST_REVIEW,
-  GET_REVIEW,
-  GET_REVIEW_BY_ID,
+
   GET_RUBRO,
   GET_ALL_CART_ITEM_PRODUCTS,
   CART_ADD_ITEM,
@@ -47,7 +45,7 @@ const initialState = {
   cartItems: [],
   sales: [],
   detailSale: [],
-  review: [],
+
 };
 
 const reducer = (state = initialState, action) => {
@@ -325,21 +323,9 @@ const reducer = (state = initialState, action) => {
         allProducts: [...state.allProducts, action.payload],
         products: [...state.products, action.payload],
       };
-    case POST_REVIEW:
-      return {
-        ...state,
-        review: [...state.review, action.payload],
-      };
-    case GET_REVIEW:
-      return {
-        ...state,
-        review: action.payload,
-      };
-    case GET_REVIEW_BY_ID:
-      return {
-        ...state,
-        review: action.payload,
-      };
+
+
+
 
     default:
       return state;
