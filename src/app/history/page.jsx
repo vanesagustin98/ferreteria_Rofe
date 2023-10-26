@@ -1,5 +1,4 @@
 "use client";
-"use client";
 
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,10 +46,6 @@ function History() {
             </div>
           </div>
         ))}
-      </div>
-      <div className={style.rewiev}>
-        <p>Califica tu Experiencia</p>
-        <StarRating />
       </div>
     </div>
   );

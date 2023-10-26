@@ -123,16 +123,16 @@ function NavBar() {
                 })}
             </select>
           </div>
-          {userActual.rolUser !== "client" &&
-            <div className={s.rutas}>
-              <Link href="/history">Historial</Link>
-            </div>
-          }
-          {userActual.rolUser !== "client" &&
-            <div className={s.rutas}>
-              <Link href="/suppliers">Proveedores</Link>
-            </div>
-          }
+          
+          <div className={s.rutas}>
+            <Link href="/history">Historial</Link>
+          </div>
+        
+      
+          <div className={s.rutas}>
+            <Link href="/suppliers">Proveedores</Link>
+          </div>
+          
         </div>
       </div>
       <div className={s.sesion}>

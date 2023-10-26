@@ -1,14 +1,16 @@
 "use client";
-import { useState } from "react";
 import style from "./register.module.css";
 import Link from "next/link";
 import validationRegister from "../componentes/validations.js/validationRegister";
 import { signIn } from "next-auth/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { useDispatch } from "react-redux";
 import { postUsers } from "../redux/actions/actions";
+import NavBar from "../componentes/NavBar/NavBar";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserByEmail, putUsers } from "../redux/actions/actions";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -73,11 +75,53 @@ const LoginPage = () => {
       console.error("Error al enviar el correo de registro:", error);
     }
     alert("El usuario fue creado correctamente");
-    window.location.href = "/login";
   };
+  const [inputrol, setInputrol] = useState({
+    emailUserRol: "",
+    roleUser: "",
+  });
+
+  const handleInputrolChange = (event) => {
+    const { id, value } = event.target;
+    setInputrol({
+      ...inputrol,
+      [id]: value,
+    });
+  };
+
+  const userEmail = useSelector(state => state.user)
+  useEffect(() => {
+    if (inputrol.emailUserRol) {
+      dispatch(getUserByEmail(inputrol.emailUserRol));
+    }
+  }, [dispatch, inputrol.emailUserRol]);
+  const handleGetUserByEmail = () => {
+
+    const newUser = {
+      idUser: userEmail.idUser,
+      emailUser: userEmail.emailUserRol,
+      passwordUser: userEmail.passwordUser,
+      rolUser: inputrol.roleUser,
+      nameUser: userEmail.nameUser,
+      isActiveUser: userEmail.isActiveUser
+    }
+
+    console.log("newUser ", newUser);
+    dispatch(putUsers(newUser))
+  };
+  const user = typeof localStorage !== 'undefined' ? localStorage.getItem("user") : null;
+  useEffect(() => {
+
+    // Si el usuario no está presente y estás en un entorno de navegador
+    if (!user && typeof window !== 'undefined' && window.localStorage) {
+      // Redirige al usuario a la página de inicio de sesión
+      window.location.replace("/login");
+    }
+  }, []);
 
   return (
     <div key="login">
+      <NavBar />
       <form onSubmit={handleSubmit} className={style.container}>
         <h1 className={style.title}>REGISTRO</h1>
 
@@ -151,10 +195,27 @@ const LoginPage = () => {
           <FontAwesomeIcon icon={faGoogle} />
         </button>
         <br />
-        <p>
-          ¿Tienes una cuenta? <Link href="/login">¡Inicia Sesión!</Link>
-        </p>
       </form>
+      <div>
+        <p>Ingrese el Email del usuario a modificar</p>
+        <input
+          type="text"
+          id="emailUserRol"
+          value={inputrol.emailUserRol}
+          onChange={handleInputrolChange}
+        />
+        <p>Seleccione el rol:</p>
+        <select
+          id="roleUser"
+          value={inputrol.roleUser}
+          onChange={handleInputrolChange}
+        >
+          <option disable value="">Rol</option>
+          <option value="admin">Admin</option>
+          <option value="employee">Employee</option>
+        </select>
+        <button onClick={handleGetUserByEmail}>Editar Usuario</button>
+      </div>
     </div>
   );
 };

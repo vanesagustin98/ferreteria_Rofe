@@ -149,9 +149,6 @@ const LoginPage = () => {
           <span className={style.googleIcon}></span>
         </button>
         <br></br>
-        <p className={style.p}>
-          ¿No tienes una cuenta? <Link href="/register">¡Registrate!</Link>
-        </p>
         <br></br>
         <p>¿Olvidaste tu contraseña?</p>
         <br></br>

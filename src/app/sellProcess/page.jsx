@@ -56,16 +56,14 @@ const CartForm = () => {
           </div>
         );
       })}
-      {userActual && userActual.rolUser === "client" && (
-        <Link href="/formCarrito">
-          <VentaButton />
-        </Link>
-      )}
-      {userActual && userActual.rolUser !== "client" && (
-        <Link href="/formProducto">
-          <AddButtom />
-        </Link>
-      )}
+      
+      <Link href="/formCarrito">
+        <VentaButton />
+      </Link>
+      
+      <Link href="/formProducto">
+        <AddButtom />
+      </Link>
       <div style={{ marginLeft: 200 }}>
         <Paginado
           productsPerPage={productsPerPage}

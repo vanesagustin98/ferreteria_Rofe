@@ -123,7 +123,6 @@ export const credential = (emailUser, passwordUser) => {
       const { data } = await axios(
         `/api/user?emailUser=${emailUser}&passwordUser=${passwordUser}`
       );
-      console.log(data);
       return dispatch({
         type: CREDENTIAL,
         payload: data,
