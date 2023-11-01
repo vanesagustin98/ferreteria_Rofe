@@ -59,29 +59,9 @@ function FormCarrito() {
         productSummary,
         paymentMethod,
       };
-      dispatch(postSale(dataToSend)).then((data) => {
-        if (typeof data.payload === "object") {
-          try {
-            axios.post("/api/nodemailer", {
-              subject: "Confirmación de compra",
-              toEmail: userActual.emailUser,
-              productSummary,
-              paymentMethod,
-              isPurchase: true,
-            });
-            alert("Su compra se realizó exitósamente.");
-            window.location.href = "/";
-          } catch (error) {
-            console.error(
-              "No se pudo obtener el correo electrónico del usuario."
-            );
-          }
-        } else {
-          alert(
-            "Hubo un error al generar su compra, por favor inténtelo nuevamente."
-          );
-        }
-      });
+      console.log(dataToSend);
+      dispatch(postSale(dataToSend)) 
+
     }
   };
 

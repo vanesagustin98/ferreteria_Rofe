@@ -298,7 +298,7 @@ export const postTags = (tag) => {
 export const postSale = (cart) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.post("/api/sales", cart);
+      const { data } = await axios.post("/api/sale", cart);
       return dispatch({
         type: POST_SALE,
         payload: data,

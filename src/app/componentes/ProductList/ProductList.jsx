@@ -11,12 +11,11 @@ import { useDispatch } from "react-redux";
 
 function ProductList({ id, name, stock, costoActual, price, enlace }) {
   const dispatch = useDispatch();
-  const user = localStorage.getItem("user")
-  const userActual = JSON.parse(user)
+ 
 
-  const handleDelete = async (id) => {
-    await dispatch(deleteLogicProduct(id));
-    await dispatch(getAllProducts());
+  const handleDelete =   (id) => {
+    dispatch(deleteLogicProduct(id));
+ dispatch(getAllProducts());
   };
 
   return (

@@ -47,23 +47,7 @@ const Detail = ({ params }) => {
       <NavBar />
       <main className={style.main}>
         <section className={style.section}>
-          <div className={style.divImg}>
-            {productDetail.image ? (
-              <Image
-                src={productDetail.image}
-                alt="Mi Imagen"
-                width={600} // Define el ancho deseado
-                height={400} // Define la altura deseada
-              />
-            ) : (
-              <Image
-                src="/ruta/a/martillo.jpg"
-                alt="Foto Descripción"
-                width={600} // Define el ancho deseado
-                height={400} // Define la altura deseada
-              />
-            )}
-          </div>
+ 
           <div className={style.divDescription}>
             {productDetail ? (
               <>

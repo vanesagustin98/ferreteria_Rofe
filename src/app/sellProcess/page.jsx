@@ -35,8 +35,7 @@ const CartForm = () => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  const user = typeof localStorage !== 'undefined' ? localStorage.getItem("user") : null;
-  const userActual = JSON.parse(user);
+ 
 
   return (
     <>
