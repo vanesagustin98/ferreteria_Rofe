@@ -1,6 +1,5 @@
 "use client";
 import style from "./register.module.css";
-import Link from "next/link";
 import validationRegister from "../componentes/validations.js/validationRegister";
 import { signIn } from "next-auth/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,8 +8,8 @@ import { postUsers } from "../redux/actions/actions";
 import NavBar from "../componentes/NavBar/NavBar";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserByEmail, putUsers } from "../redux/actions/actions";
+import { useDispatch } from "react-redux";
+import ChangeRolUser from "../componentes/changeRolUser/changeRolUser";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -76,39 +75,7 @@ const LoginPage = () => {
     }
     alert("El usuario fue creado correctamente");
   };
-  const [inputrol, setInputrol] = useState({
-    emailUserRol: "",
-    roleUser: "",
-  });
-
-  const handleInputrolChange = (event) => {
-    const { id, value } = event.target;
-    setInputrol({
-      ...inputrol,
-      [id]: value,
-    });
-  };
-
-  const userEmail = useSelector(state => state.user)
-  useEffect(() => {
-    if (inputrol.emailUserRol) {
-      dispatch(getUserByEmail(inputrol.emailUserRol));
-    }
-  }, [dispatch, inputrol.emailUserRol]);
-  const handleGetUserByEmail = () => {
-
-    const newUser = {
-      idUser: userEmail.idUser,
-      emailUser: userEmail.emailUserRol,
-      passwordUser: userEmail.passwordUser,
-      rolUser: inputrol.roleUser,
-      nameUser: userEmail.nameUser,
-      isActiveUser: userEmail.isActiveUser
-    }
-
-    console.log("newUser ", newUser);
-    dispatch(putUsers(newUser))
-  };
+  
   const user = typeof localStorage !== 'undefined' ? localStorage.getItem("user") : null;
   useEffect(() => {
 
@@ -122,6 +89,7 @@ const LoginPage = () => {
   return (
     <div key="login">
       <NavBar />
+      <ChangeRolUser/>
       <form onSubmit={handleSubmit} className={style.container}>
         <h1 className={style.title}>REGISTRO</h1>
 
@@ -196,26 +164,6 @@ const LoginPage = () => {
         </button>
         <br />
       </form>
-      <div>
-        <p>Ingrese el Email del usuario a modificar</p>
-        <input
-          type="text"
-          id="emailUserRol"
-          value={inputrol.emailUserRol}
-          onChange={handleInputrolChange}
-        />
-        <p>Seleccione el rol:</p>
-        <select
-          id="roleUser"
-          value={inputrol.roleUser}
-          onChange={handleInputrolChange}
-        >
-          <option disable value="">Rol</option>
-          <option value="admin">Admin</option>
-          <option value="employee">Employee</option>
-        </select>
-        <button onClick={handleGetUserByEmail}>Editar Usuario</button>
-      </div>
     </div>
   );
 };

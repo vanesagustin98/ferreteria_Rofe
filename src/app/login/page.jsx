@@ -148,10 +148,6 @@ const LoginPage = () => {
           <FontAwesomeIcon icon={faGoogle} />
           <span className={style.googleIcon}></span>
         </button>
-        <br></br>
-        <br></br>
-        <p>¿Olvidaste tu contraseña?</p>
-        <br></br>
       </form>
     </div>
   );
