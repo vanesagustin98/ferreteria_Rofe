@@ -3,6 +3,7 @@ import style from "./rol.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserByEmail, putUsers } from "@/app/redux/actions/actions";
+import validationRol from "../validations.js/validationRol";
 
 const ChangeRolUser = () => {
   let dispatch = useDispatch();
@@ -11,6 +12,7 @@ const ChangeRolUser = () => {
     emailUserRol: "",
     roleUser: "",
   });
+  const [errors, setErrors] = useState({});
 
   const handleInputrolChange = (event) => {
     const { id, value } = event.target;
@@ -18,6 +20,12 @@ const ChangeRolUser = () => {
       ...inputrol,
       [id]: value,
     });
+    setErrors(
+      validationRol({
+        ...inputrol,
+        [event.target.id]: event.target.value,
+      })
+    );
   };
 
   const userGlobal = useSelector((state) => state.user);
@@ -82,6 +90,7 @@ const ChangeRolUser = () => {
         value={inputrol.emailUserRol}
         onChange={handleInputrolChange}
       />
+      {errors.emailUserRol && <p className={style.p}>{errors.emailUserRol}</p>}
       <h3 className={style.subtitle}>Seleccione el rol:</h3>
       <select
         className={style.select}
