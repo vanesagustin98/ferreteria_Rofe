@@ -2,32 +2,32 @@ const { db} = require("../../db");
 const { Sale , SaleDetail,Products } = db;
 
 module.exports = async (data) => {
- 
     let newSale = await Sale.create({
-        payMethod:data.payMethod,
+        payMethod:data.paymentMethod,
         date:new Date() 
     })
     
     let precioTotal=0
-    for (const productInfo of data.productosAVender) {
+    for (const productInfo of data.productSummary) {
         
-        const product= await Products.findByPk(productInfo.ProductoId);
-        const precioFinal = productInfo.amount * productInfo.unitPrice;
+        const product= await Products.findByPk(productInfo.ID);
+        const precioFinal = productInfo.Qty * productInfo.Price;
         precioTotal += precioFinal
         newSale.precioTotal = precioTotal;
         await newSale.save();
-   
+        console.log(product);
         await SaleDetail.create({
             VentaId: newSale.id,
-            ProductoId: productInfo.ProductoId,
-            amount: productInfo.amount,
-            unitPrice: productInfo.unitPrice,
+            ProductoId: product.ID,
+            amount: productInfo.Qty,
+            unitPrice: product.price,
             finalPrice: precioFinal,
             Product:product.name
         });
- 
+        
+   
     }
 
-   
+   return {}
 
 }
