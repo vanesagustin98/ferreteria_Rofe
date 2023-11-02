@@ -1,13 +1,11 @@
 .container {
   background-color: #ec8800;
-  margin: 20vh auto;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 500px;
-  height: 70vh;
   padding: 40px;
   margin-bottom: 50px;
 }
@@ -31,12 +29,13 @@
 
 .input {
   color: #1e1e1e;
-  background-color: #959191;
+  background-color: #c2bcbcbe;
   border-radius: 12px;
   border: solid 1px #474747;
   margin: 0 1vw 1vh;
   width: 420px;
   height: 4vh;
+  padding: 10px;
 }
 
 .inputWrong {
@@ -54,16 +53,17 @@
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #6c6060;
+  background-color: #332d2d;
   color: white;
   cursor: pointer;
   width: auto;
   margin: 2vh auto;
 }
 .button:hover {
-  background-color: #959191;
+  transform: scale(1.05);
+  background-color: #535252;
   box-shadow: 0 0 15px rgb(92, 106, 125);
-  color: #1e1e1e;
+  color: white;
 }
 
 .forget {
@@ -89,13 +89,14 @@
 
 .passwordInput {
   color: black;
-  background-color: #959191;
+  background-color: #c2bcbcbe;
   border-radius: 10px;
   border: solid 1px #474747;
   margin: 0 1vw 1vh;
   width: 400px;
   height: 4vh;
   font-size: 16px;
+  padding: 10px;
 }
 
 .passwordToggle {
@@ -111,4 +112,12 @@
 .eyeIcon {
   font-size: 1.5rem;
   position: relative;
+}
+
+
+.division{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 40px;
 }

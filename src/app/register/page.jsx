@@ -75,12 +75,12 @@ const LoginPage = () => {
     }
     alert("El usuario fue creado correctamente");
   };
-  
-  const user = typeof localStorage !== 'undefined' ? localStorage.getItem("user") : null;
-  useEffect(() => {
 
+  const user =
+    typeof localStorage !== "undefined" ? localStorage.getItem("user") : null;
+  useEffect(() => {
     // Si el usuario no está presente y estás en un entorno de navegador
-    if (!user && typeof window !== 'undefined' && window.localStorage) {
+    if (!user && typeof window !== "undefined" && window.localStorage) {
       // Redirige al usuario a la página de inicio de sesión
       window.location.replace("/login");
     }
@@ -89,81 +89,84 @@ const LoginPage = () => {
   return (
     <div key="login">
       <NavBar />
-      <ChangeRolUser/>
-      <form onSubmit={handleSubmit} className={style.container}>
-        <h1 className={style.title}>REGISTRO</h1>
+      <div className={style.division}>
+        
+        <form onSubmit={handleSubmit} className={style.container}>
+          <h1 className={style.title}>REGISTRO</h1>
 
-        <h3 className={style.subtitle}>Nombre</h3>
-        <div className={style.passwordContainer}>
-          <input
-            className={errors.nameUser ? style.inputWrong : style.input}
-            placeholder="Escriba su nombre completo"
-            type="text"
-            value={input.nameUser}
-            id="nameUser"
-            onChange={handleChange}
-          />
-        </div>
+          <h3 className={style.subtitle}>Nombre</h3>
+          <div className={style.passwordContainer}>
+            <input
+              className={errors.nameUser ? style.inputWrong : style.input}
+              placeholder="Escriba su nombre completo"
+              type="text"
+              value={input.nameUser}
+              id="nameUser"
+              onChange={handleChange}
+            />
+          </div>
 
-        {errors.nameUser && <p className={style.p}>{errors.nameUser}</p>}
+          {errors.nameUser && <p className={style.p}>{errors.nameUser}</p>}
 
-        <h3 className={style.subtitle}>Email</h3>
+          <h3 className={style.subtitle}>Email</h3>
 
-        <div className={style.passwordContainer}>
-          <input
-            className={errors.emailUser ? style.inputWrong : style.input}
-            placeholder="Escriba su email"
-            type="email"
-            value={input.emailUser}
-            id="emailUser"
-            onChange={handleChange}
-          />
-        </div>
+          <div className={style.passwordContainer}>
+            <input
+              className={errors.emailUser ? style.inputWrong : style.input}
+              placeholder="Escriba su email"
+              type="email"
+              value={input.emailUser}
+              id="emailUser"
+              onChange={handleChange}
+            />
+          </div>
 
-        {errors.emailUser && <p className={style.p}>{errors.emailUser}</p>}
+          {errors.emailUser && <p className={style.p}>{errors.emailUser}</p>}
 
-        <h3 className={style.subtitle}>Contraseña</h3>
-        <div className={style.passwordContainer}>
-          <input
-            className={
-              errors.passwordUser ? style.inputWrong : style.passwordInput
-            }
-            placeholder="Escriba su contraseña"
-            type={mostrarContr ? "text" : "password"}
-            value={input.passwordUser}
-            id="passwordUser"
-            onChange={handleChange}
-          />
+          <h3 className={style.subtitle}>Contraseña</h3>
+          <div className={style.passwordContainer}>
+            <input
+              className={
+                errors.passwordUser ? style.inputWrong : style.passwordInput
+              }
+              placeholder="Escriba su contraseña"
+              type={mostrarContr ? "text" : "password"}
+              value={input.passwordUser}
+              id="passwordUser"
+              onChange={handleChange}
+            />
+            <button
+              type="button"
+              onClick={toggleMostrarContr}
+              className={style.passwordToggle}
+            >
+              {mostrarContr ? (
+                <span className={style.eyeIcon}>🙈</span>
+              ) : (
+                <span className={style.eyeIcon}>👁️</span>
+              )}
+            </button>
+          </div>
+
+          {errors.passwordUser && (
+            <p className={style.p}>{errors.passwordUser}</p>
+          )}
+
+          <button className={style.button} type="submit">
+            Crear Cuenta
+          </button>
+          <p>O registrate con</p>
           <button
             type="button"
-            onClick={toggleMostrarContr}
-            className={style.passwordToggle}
+            className={style.btnFloating}
+            onClick={() => signIn("google")}
           >
-            {mostrarContr ? (
-              <span className={style.eyeIcon}>🙈</span>
-            ) : (
-              <span className={style.eyeIcon}>👁️</span>
-            )}
+            <FontAwesomeIcon icon={faGoogle} />
           </button>
-        </div>
-
-        {errors.passwordUser && (
-          <p className={style.p}>{errors.passwordUser}</p>
-        )}
-
-        <button className={style.button} type="submit">
-          Crear Cuenta
-        </button>
-        <p>O registrate con</p>
-        <button
-          type="button"
-          className={style.btnFloating}
-          onClick={() => signIn("google")}
-        >
-          <FontAwesomeIcon icon={faGoogle} />
-        </button>
-        <br />
-      </form>
+          <br />
+        </form>
+        <ChangeRolUser />
+      </div>
     </div>
   );
 };
